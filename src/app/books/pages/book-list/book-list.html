@@ -1,0 +1,18 @@
+ <div class="catalogue">                                                                                                                                                                                   
+    <h1>Catalogue</h1>                                                                                                                                                                                      
+                                                                                                                                                                                                            
+    <div class="book-grid">                                                                                                                                                                                 
+      @for (book of books(); track book.id) {                                                                                                                                                               
+        <div class="book-card">                                                                                                                                                                             
+          <img [src]="book.coverUrl" [alt]="book.title" class="book-cover" />                                                                                                                               
+          <div class="book-info">                                                                                                                                                                           
+            <div class="book-title">{{ book.title }}</div>
+            <div class="book-author">{{ book.author }}</div>                                                                                                                                                
+            <span class="badge" [class.available]="book.availableCopies > 0" [class.unavailable]="book.availableCopies === 0">                                                                              
+              {{ book.availableCopies > 0 ? 'Dispo' : 'Emprunté' }}
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>

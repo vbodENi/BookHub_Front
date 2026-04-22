@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UserLogin } from './model/userLogin';
 import { AuthService } from '../../../services/auth';
+import { User } from '../../user';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +13,7 @@ export class Login {
 
   private readonly authService = inject(AuthService);
 
-    user: UserLogin = {
-    email: '',
-    password: '',
-  };
+  user: User = new User('', '', '');
 
   onSubmit(loginForm: any)
   {

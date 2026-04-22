@@ -1,7 +1,8 @@
 import { Injectable} from '@angular/core';
-import { UserLogin } from '../auth/pages/login/model/userLogin';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../auth/user';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +14,9 @@ export class AuthService {
 
     constructor(private readonly http: HttpClient) {}
 
-    login(email: string, password: string): Observable<Partial<UserLogin>> 
+    login(email: string, password: string): Observable<Partial<User>> 
     {
         const body = { email, password };
-        return this.http.post<Partial<UserLogin>>(this.apiUrl, body);
+        return this.http.post<Partial<User>>(this.apiUrl, body);
     }
 }

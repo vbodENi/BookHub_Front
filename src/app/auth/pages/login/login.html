@@ -1,0 +1,55 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <div class="logo">
+      <div class="icon">
+        <span class="b1"></span>
+        <span class="b2"></span>
+        <span class="b3"></span>
+      </div>
+      <h1>BookHub</h1>
+      <p>Bibliothèque communautaire</p>
+    </div>
+
+    <form
+    #loginForm="ngForm"
+    (ngSubmit)="onSubmit(loginForm)"
+    >
+      <label for="">Email</label>
+      <div class="input-group">
+        <span class="icon-mail">✉️</span>
+        <input
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="user.email"
+            required
+            placeholder="email@exemple.com"
+        >
+      </div>
+
+      <label for="">Mot de passe</label>
+      <div class="input-group">
+        <input
+            id="password"
+            name="password"
+            type="password"
+            [(ngModel)]="user.password"
+            required placeholder="••••••••"
+        >
+        <span class="icon-eye">👁️</span>
+      </div>
+
+      <button type="submit" class="btn-primary">Se connecter</button>
+
+      <a href="#" class="forgot">Mot de passe oublié ?</a>
+
+      <div class="divider"></div>
+
+      <p class="no-account">Pas encore de compte ?</p>
+
+      <button type="button" class="btn-outline">S'inscrire</button>
+    </form>
+
+  </div>
+</div>

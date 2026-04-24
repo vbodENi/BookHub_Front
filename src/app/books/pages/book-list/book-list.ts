@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { BooksService } from '../../books.service';
 import { Book } from '../../book.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './book-list.html',
   styleUrl: './book-list.scss',
 })

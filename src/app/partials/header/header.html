@@ -1,0 +1,40 @@
+ <header uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">                                                                                                                                      
+    <nav class="uk-navbar-container" uk-navbar>                                                                                                                                                                            
+                                                                                                                                                                                                                           
+      <div class="uk-navbar-left">                                                                                                                                                                                         
+        <a class="uk-navbar-toggle uk-hidden@m" href="#mobile-menu" uk-toggle>                                                                                                                                             
+          <span uk-navbar-toggle-icon></span>
+        </a>
+        <a class="uk-navbar-item uk-logo" routerLink="/">BookHub</a>
+        <ul class="uk-navbar-nav uk-visible@m uk-margin-left">
+          <li><a routerLink="/catalogue" routerLinkActive="uk-active">Catalogue</a></li>
+          <li><a routerLink="/emprunts" routerLinkActive="uk-active">Emprunts</a></li>
+          <li><a routerLink="/reservations" routerLinkActive="uk-active">Réservations</a></li>
+        </ul>
+      </div>
+
+      <div class="uk-navbar-right uk-visible@m">
+        <ul class="uk-navbar-nav">
+          <li><a routerLink="/connexion" routerLinkActive="uk-active">Connexion</a></li>
+        </ul>
+        <div class="uk-navbar-item">
+          <a routerLink="/inscription" class="uk-button uk-button-primary" routerLinkActive="uk-active">Inscription</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <div id="mobile-menu" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-default uk-margin-top">
+        <li><a routerLink="/catalogue" routerLinkActive="uk-active">Catalogue</a></li>
+        <li><a routerLink="/emprunts" routerLinkActive="uk-active">Emprunts</a></li>
+        <li><a routerLink="/reservations" routerLinkActive="uk-active">Réservations</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a routerLink="/connexion" routerLinkActive="uk-active">Connexion</a></li>
+        <li><a routerLink="/inscription" routerLinkActive="uk-active">Inscription</a></li>
+      </ul>
+    </div>
+  </div>

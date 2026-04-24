@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --bh-primary: #1e40af;
+    --bh-bg: #f8fafc;
+    --bh-card: #ffffff;
+    --bh-border: #e2e8f0;
+    --bh-text: #1e293b;
+    --bh-text-muted: #64748b;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bh-bg);
+    color: var(--bh-text);
+  }

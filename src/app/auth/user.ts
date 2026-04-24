@@ -22,3 +22,26 @@ export class User {
     this.token = token ?? '';
   }
 }
+// DTO avec les données qui vont être envoyées au backend pour l'inscription d'un nouvel utilisateur
+export class RegisterRequestDTO {
+  lastName!: string;
+  firstName!: string;
+  email!: string;
+  password!: string;
+  phone!: string;
+
+  constructor(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    phone: string
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.password = password;
+    this.phone = phone;
+  }
+}
+

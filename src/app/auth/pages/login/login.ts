@@ -15,15 +15,18 @@ export class Login {
 
   user: User = new User('', '', '');
 
-  onSubmit(loginForm: any)
-  {
-    this.authService.login(this.user.email, this.user.password).subscribe({
-      next: (user) => {
-        console.log('Logged in:', user);
-      },
-      error: (err) => {
-        console.error('Login failed:', err);
-      }
-    });
-  }
+onSubmit(loginForm: any) {
+  this.authService.login(this.user.email, this.user.password).subscribe({
+    next: (response: any) => {
+      console.log('Logged in:', response);
+
+      // store token from response
+      sessionStorage.setItem('token', response.token);
+
+    },
+    error: (err) => {
+      console.error('Login failed:', err);
+    }
+  });
+}
 }

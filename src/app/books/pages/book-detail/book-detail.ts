@@ -11,7 +11,7 @@ import { Book } from '../../book.model';
 })
 export class BookDetail implements OnInit {
   private readonly route = inject(ActivatedRoute);
-  private bookService = inject(BooksService);
+  private readonly bookService = inject(BooksService);
   book = signal<Book | null>(null);
 
   ngOnInit(): void {

@@ -32,7 +32,7 @@ export class AuthService {
   private readonly _isLoading = signal(false);
   private readonly _errorMessage = signal<string | null>(null);
   private readonly _registrationSuccess = signal(false);
-  private _currentUser = signal<User | null>(null);
+  private readonly _currentUser = signal<User | null>(null);
 
   readonly isLoading = computed(() => this._isLoading());
   readonly errorMessage = computed(() => this._errorMessage());
@@ -40,7 +40,7 @@ export class AuthService {
   readonly currentUser = computed(() => this._currentUser());
   readonly isAuthenticated = computed(() => !!this._currentUser());
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   // ── Login ───────────────────────────────────────────────────────
   login(email: string, password: string): Observable<Partial<User>> {
@@ -96,3 +96,4 @@ export class AuthService {
     }
   }
 }
+ 

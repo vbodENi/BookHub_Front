@@ -5,6 +5,7 @@ import { Book } from '../../book.model';
 
 @Component({
   selector: 'app-book-detail',
+  imports: [],
   templateUrl: './book-detail.html',
   styleUrl: './book-detail.scss',
 })

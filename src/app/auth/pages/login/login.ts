@@ -21,7 +21,7 @@ onSubmit(loginForm: any) {
       console.log('Logged in:', response);
 
       // store token from response
-      sessionStorage.setItem('token', response.token);
+      sessionStorage.setItem('token', response.data.token);
 
     },
     error: (err) => {

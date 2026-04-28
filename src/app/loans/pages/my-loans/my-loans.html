@@ -1,0 +1,46 @@
+<div class="uk-flex uk-flex-center uk-flex-middle bh-page-bg" style="min-height: 100vh;">
+  <div class="uk-width-1-1 uk-width-1-2@m uk-width-1-3@l uk-padding-small">
+
+    <div class="uk-card uk-card-default uk-card-body uk-border-rounded bh-card">
+
+      <div class="uk-text-center uk-margin-medium-bottom">
+        <span uk-icon="icon: book; ratio: 2" class="bh-icon-primary"></span>
+        <h1 class="uk-heading-small uk-margin-small-top bh-brand-title">BookHub</h1>
+        <p class="uk-text-muted uk-margin-remove-top">Mes Emprunts</p>
+      </div>
+
+      @if (loans().length > 0) {
+        @for (loan of loans(); track loan.id) {
+          <div class="uk-card uk-card-default uk-card-small uk-margin-small uk-padding-small">
+
+            <h3 class="uk-card-title">{{ loan.bookName }}</h3>
+
+            <p class="uk-text-small uk-text-muted">
+              Emprunté le : {{ loan.borrowDate | date:'dd/MM/yyyy' }} <br>
+              Retour prévu : {{ loan.expectedReturnDate | date:'dd/MM/yyyy' }} <br>
+
+              @if (loan.actualReturnDate) {
+                Retour réel : {{ loan.actualReturnDate | date:'dd/MM/yyyy' }}
+              }
+            </p>
+
+            <span class="uk-label" -->
+              {{ loan.loanStatus }}
+            </span>
+
+            @if (loan.lateDays > 0) {
+              <div class="uk-text-danger uk-margin-small-top">
+                {{ loan.lateDays }} jour(s) de retard
+              </div>
+            }
+
+          </div>
+        }
+
+      } @else {
+        <p class="uk-text-center uk-text-muted">Aucun emprunt pour le moment.</p>
+      }
+
+    </div>
+  </div>
+</div>

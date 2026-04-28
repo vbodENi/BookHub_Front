@@ -26,7 +26,8 @@ export class MyLoans implements OnInit
           console.log(this.loans);
         },
         error: (err) => {
-          console.error('Erreur API', err);
+          const msg = err?.error?.message || 'Erreur inconnue';
+          console.log(msg);
         }
       });
     }

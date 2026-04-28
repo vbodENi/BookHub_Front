@@ -36,7 +36,27 @@
               <li>Note moyenne : {{ b.averageRating }} / 5</li>
             </ul>
           </div>
-
+          <div class="uk-margin-medium-top">
+            @if (isLoggedIn() && b.availableCopies > 0) {
+              <button 
+                class="uk-button uk-button-primary"
+                (click)="borrow()">
+                Emprunter
+              </button>
+            } @else if (!isLoggedIn()) {
+              <button 
+                class="uk-button uk-button-default" 
+                disabled>
+                Connectez-vous pour emprunter
+              </button>
+            } @else {
+              <button 
+                class="uk-button uk-button-default" 
+                disabled>
+                Indisponible
+              </button>
+            }
+          </div>
         </div>
       </div>
     </div>

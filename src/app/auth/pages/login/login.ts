@@ -19,13 +19,13 @@ onSubmit(loginForm: any) {
   this.authService.login(this.user.email, this.user.password).subscribe({
     next: (response: any) => {
       console.log('Logged in:', response);
-
       // store token from response
       sessionStorage.setItem('token', response.data.token);
 
     },
     error: (err) => {
-      console.error('Login failed:', err);
+        const msg = err?.error?.message || 'Erreur inconnue';
+        console.log(msg);
     }
   });
 }

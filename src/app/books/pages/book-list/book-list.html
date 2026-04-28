@@ -18,7 +18,7 @@
           class="uk-button uk-button-small"
           [class.uk-button-primary]="activeCategory() === null"
           [class.uk-button-default]="activeCategory() !== null"
-          (click)="activeCategory.set(null)"
+          (click)="resetFilters()"
         >
           Toutes
         </button>

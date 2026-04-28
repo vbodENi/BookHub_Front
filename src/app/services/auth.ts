@@ -15,7 +15,7 @@ interface ServiceResponse<T> {
 })
 export class AuthService {
 
-    /* private readonly apiUrl = 'http://localhost:8080/login/auth';
+    /* private readonly apiUrl = 'http://localhost:8080/api/auth/login/';
 
 
     constructor(private readonly http: HttpClient) {}

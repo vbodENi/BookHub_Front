@@ -1,8 +1,9 @@
-import { computed, Injectable, signal} from '@angular/core';
+import { computed, inject, Injectable, signal} from '@angular/core';
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, finalize, Observable, tap, throwError } from 'rxjs';
 import { RegisterRequestDTO, User } from '../auth/user';
+import { Router } from '@angular/router';
 
 interface ServiceResponse<T> {
   code: string;
@@ -38,9 +39,10 @@ export class AuthService {
   readonly errorMessage = computed(() => this._errorMessage());
   readonly registrationSuccess = computed(() => this._registrationSuccess());
   readonly currentUser = computed(() => this._currentUser());
-  readonly isAuthenticated = computed(() => !!this._currentUser());
+  isAuthenticated = signal<boolean>(!!sessionStorage.getItem('token'));
 
   constructor(private readonly http: HttpClient) {}
+  private readonly router = inject(Router);
 
   // ── Login ───────────────────────────────────────────────────────
   login(email: string, password: string): Observable<Partial<User>> {
@@ -48,6 +50,13 @@ export class AuthService {
       `${this.apiUrl}/api/auth/login`,
       { email, password }
     );
+  }
+
+  // ── Logout ──────────────────────────────────────────────────────
+  logout(): void {
+    sessionStorage.removeItem('token');
+    this.isAuthenticated.set(false);
+    this.router.navigate(['/login']);
   }
 
   // ── Register ────────────────────────────────────────────────────
@@ -96,4 +105,3 @@ export class AuthService {
     }
   }
 }
- 

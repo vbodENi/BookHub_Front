@@ -1,0 +1,92 @@
+// $bh-primary:      #3d5a80;
+// $bh-text:         #1a1a2e;
+// $bh-text-muted:   #6b7280;
+// $bh-border:       #d1d5db;
+// $bh-bg:           #f5f4f0;
+// $bh-radius:       10px;
+
+// .bh-profile-page {
+//   max-width: 480px;
+//   margin: 0 auto;
+//   padding: 24px 16px;
+// }
+
+// .bh-profile-header {
+//   display: flex;
+//   align-items: center;
+//   gap: 16px;
+// }
+
+// .bh-avatar {
+//   width: 64px;
+//   height: 64px;
+//   border-radius: 50%;
+//   background-color: #dce8f5;
+//   color: $bh-primary;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 1.25rem;
+//   font-weight: 600;
+//   flex-shrink: 0;
+// }
+
+// .bh-profile-name {
+//   font-size: 1.25rem;
+//   font-weight: 700;
+//   color: $bh-text;
+//   margin: 0;
+// }
+
+// .bh-profile-role {
+//   font-size: 0.875rem;
+//   margin: 2px 0 0;
+// }
+
+// .bh-card {
+//   border-radius: $bh-radius !important;
+// }
+
+// .bh-card-title {
+//   font-size: 1rem;
+//   font-weight: 600;
+//   color: $bh-text;
+//   margin-bottom: 16px;
+// }
+
+// .bh-info-field {
+//   margin-bottom: 16px;
+//   border-bottom: 0.5px solid $bh-border;
+//   padding-bottom: 12px;
+
+//   &:last-of-type {
+//     border-bottom: none;
+//   }
+// }
+
+// .bh-label {
+//   font-size: 0.8125rem;
+//   color: $bh-text-muted;
+//   margin-bottom: 2px;
+//   display: block;
+// }
+
+// .bh-value {
+//   font-size: 0.9375rem;
+//   color: $bh-text;
+//   margin: 0;
+// }
+
+.bh-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #dce8f5;
+  color: #3d5a80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}

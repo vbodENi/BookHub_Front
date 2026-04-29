@@ -1,7 +1,9 @@
+import { Category } from "./category.model";
+
  export class Book {
     constructor(
       public id: number,
-      public categoryLabel: string,
+      public category: Category,
       public title: string,
       public author: string,
       public isbn: string,

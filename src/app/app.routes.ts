@@ -17,7 +17,7 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./auth/pages/register/register').then((c) => c.Register),
   },
-{
+  {
      path: 'books/:id',
      loadComponent: () => import('./books/pages/book-detail/book-detail').then(m => m.BookDetail)
 },
@@ -25,4 +25,13 @@ export const routes: Routes = [
      path: 'loans',
      loadComponent: () => import('./loans/pages/my-loans/my-loans').then(m => m.MyLoans)
 }
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./profile/pages/show-profile/show-profile').then((c) => c.ShowProfile),
+  },
+  {
+    path: 'profile/edit',
+    loadComponent: () => import('./profile/pages/update-profile/update-profile').then((c) => c.UpdateProfile),
+  },
 ];

@@ -45,3 +45,34 @@ export class RegisterRequestDTO {
   }
 }
 
+// DTO reçu depuis le back pour afficher le profil
+export class ProfileResponseDTO {
+  firstName!: string;
+  lastName!: string;
+  email!: string;
+  phone!: string;
+}
+
+// DTO envoyé au back pour modifier le profil
+export class ProfileUpdateRequestDTO {
+  firstName!: string;
+  lastName!: string;
+  phone!: string;
+  oldPassword?: string;
+  newPassword?: string;
+
+  constructor(
+    firstName: string,
+    lastName: string,
+    phone: string,
+    oldPassword?: string,
+    newPassword?: string
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phone = phone;
+    this.oldPassword = oldPassword;
+    this.newPassword = newPassword;
+  }
+}
+

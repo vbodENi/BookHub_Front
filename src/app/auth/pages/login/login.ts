@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth';
 import { User } from '../../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { User } from '../../user';
 export class Login {
 
   private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   user: User = new User('', '', '');
 
@@ -21,6 +23,11 @@ onSubmit(loginForm: any) {
       console.log('Logged in:', response);
       // store token from response
       sessionStorage.setItem('token', response.data.token);
+
+      this.authService.isAuthenticated.set(true);
+
+      // redirect to home page
+      this.router.navigate(['/']);
 
     },
     error: (err) => {
